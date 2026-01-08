@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3307/achro
+    username: root
+    password: P@ssw0rdironsin0
+
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 1
+      connection-test-query: SELECT 1
+
+server:
+  port: 8080
