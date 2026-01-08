@@ -1,18 +1,6 @@
 spring:
   datasource:
-    driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://10.0.2.46:3306/achro?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Seoul
-    username: root
-    password: P@ssw0rdironsin0
-    hikari:
-      pool-name: HikariPool-dev
-      maximum-pool-size: 10
-      minimum-idle: 5
-      connection-timeout: 30000
-      idle-timeout: 600000
-      max-lifetime: 1800000
-      validation-timeout: 5000
-      connection-test-query: SELECT 1
+    jndi-name: java:comp/env/jdbc/ApiDS
 
 logging:
   level:
