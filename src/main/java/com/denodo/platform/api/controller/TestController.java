@@ -21,7 +21,6 @@ public class TestController {
         String version = jdbcTemplate.queryForObject("SELECT VERSION()", String.class);
 
         System.out.println("DB 연결 성공!");
-
         return Map.of(
                 "select1", result,
                 "version", version
