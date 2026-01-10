@@ -168,14 +168,15 @@ curl -i https://api.denodo.kr/api/db/test
 ---
 
 ## 🔐 SSH 포트 포워딩 (Local PC → Private DB)
+### Local 개발시 로컬 IDE 에서 DB 연결 방법
 
-### ▶ PowerShell 기준
+### ▶ PowerShell 기준 (Windows)
 
 ```powershell
 ssh -i D:\dev\aws\unenc_myec2key.pem -N -L 3307:10.0.2.46:3306 ubuntu@43.203.97.101
 ```
 
-### ▶ 포트 확인
+### ▶ 포트 확인 (새 창)
 
 ```powershell
 netstat -ano | findstr 3307
