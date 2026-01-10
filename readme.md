@@ -120,7 +120,9 @@ ss -ntp | grep :3306
 ### ▶ Tomcat 상태 확인 / 재시작
 
 ```bash
-sudo ss -lntp | grep 8080
+sudo systemctl status tomcat
+sudo systemctl start tomcat
+sudo systemctl stop tomcat
 sudo systemctl restart tomcat
 ```
 
@@ -141,6 +143,9 @@ sudo systemctl reload nginx
 
 ```bash
 tail -f -n 1000 /opt/tomcat/current/logs/catalina.out
+
+ps -ef | grep tomcat
+ss -lntp | grep 8080
 ```
 
 ---

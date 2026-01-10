@@ -2,7 +2,7 @@ spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://localhost:3307/denodo
-    username: root
+    username: api_denodo
     password: 1
 
     hikari:
