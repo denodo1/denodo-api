@@ -21,7 +21,7 @@ Nginx를 통한 **TLS 종료 + Reverse Proxy** 구조로 운영되는 백엔드 
 
 ## 🧱 전체 아키텍처 요약
 
-![VPC_Architect.jpg](..%2F..%2Fdev%2Faws%2FVPC_Architect.jpg)
+![img.png](img.png)
 ```
 [ Client ]
     |
