@@ -137,6 +137,25 @@ sudo systemctl reload nginx
 
 ---
 
+## ⚙️ Server 설정 파일
+
+### ▶ Nginx
+
+```bash
+sudo vi /etc/nginx/sites-available/denodo.conf
+```
+
+### ▶ Tomcat
+
+```bash
+vi /opt/tomcat/current/bin/setenv.sh
+vi /opt/tomcat/current/conf/Catalina/localhost/api.xml
+
+vi /opt/tomcat/current/conf/server.xml
+```
+
+---
+
 ## 📜 로그 확인
 
 ### ▶ Tomcat 로그
@@ -184,7 +203,7 @@ netstat -ano | findstr 3307
 
 ---
 
-# ⚙️ Git / 프로젝트 관리
+# 📍 Git / 프로젝트 관리
 
 ## ▶ 초기 Git 설정
 
