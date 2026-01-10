@@ -139,7 +139,7 @@ sudo systemctl reload nginx
 
 ## ⚙️ Server 설정 파일
 
-### ▶ Tomcat
+### ▶ Tomcat 설정
 
 ```bash
 vi /opt/tomcat/current/bin/setenv.sh
@@ -148,7 +148,7 @@ vi /opt/tomcat/current/conf/Catalina/localhost/api.xml
 vi /opt/tomcat/current/conf/server.xml
 ```
 
-### ▶ Nginx
+### ▶ Nginx 설정
 
 ```bash
 sudo vi /etc/nginx/sites-available/denodo.conf
