@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.denodo.platform.api.post.mapper.PostMapper">
+
+    <!-- 목록 -->
+    <select id="selectPostList" resultType="map">
+        SELECT
+            POST_ID,
+            POST_TITLE,
+            POST_CONTENT,
+            POST_AUTHOR,
+            POST_DEL_YN,
+            CREATE_DATE,
+            UPDATE_DATE
+        FROM TD_POST
+        WHERE POST_DEL_YN = 'N'
+        <if test="keyword != null and keyword != ''">
+            AND POST_TITLE LIKE CONCAT('%', #{keyword}, '%')
+        </if>
+        ORDER BY CREATE_DATE DESC
+        LIMIT #{limit} OFFSET #{offset}
+    </select>
+
+    <!-- 상세 -->
+    <select id="selectPostById" resultType="map">
+        SELECT
+            POST_ID,
+            POST_TITLE,
+            POST_CONTENT,
+            POST_AUTHOR,
+            POST_DEL_YN,
+            CREATE_DATE,
+            UPDATE_DATE
+        FROM TD_POST
+        WHERE POST_ID = #{postId}
+        AND POST_DEL_YN = 'N'
+    </select>
+
+    <!-- 등록 -->
+    <insert id="insertPost" parameterType="map">
+        INSERT INTO TD_POST (
+            POST_TITLE,
+            POST_CONTENT,
+            POST_AUTHOR,
+            POST_DEL_YN
+        ) VALUES (
+            #{postTitle},
+            #{postContent},
+            #{postAuthor},
+            'N'
+        )
+    </insert>
+
+    <!-- 수정 -->
+    <update id="updatePost" parameterType="map">
+        UPDATE TD_POST
+        SET
+            POST_TITLE   = #{postTitle},
+            POST_CONTENT = #{postContent}
+        WHERE POST_ID = #{postId}
+            AND POST_DEL_YN = 'N'
+    </update>
+
+    <!-- 삭제 -->
+    <update id="deletePost">
+        UPDATE TD_POST
+            SET POST_DEL_YN = 'Y'
+        WHERE POST_ID = #{postId}
+        AND POST_DEL_YN = 'N'
+    </update>
+
+</mapper>

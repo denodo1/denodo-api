@@ -154,6 +154,12 @@ vi /opt/tomcat/current/conf/server.xml
 sudo vi /etc/nginx/sites-available/denodo.conf
 ```
 
+### ▶ MariaDB 설정
+
+```bash
+vi /etc/mysql/mariadb.conf.d/50-server.cnf
+```
+
 ---
 
 ## 📜 로그 확인

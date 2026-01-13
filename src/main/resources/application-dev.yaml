@@ -4,5 +4,5 @@ spring:
 
 logging:
   level:
-    com.denodo.platform: INFO
-    com.zaxxer.hikari: INFO
+    com.denodo.platform: info
+    com.zaxxer.hikari: info

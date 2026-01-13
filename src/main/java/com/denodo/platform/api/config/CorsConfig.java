@@ -13,7 +13,11 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("https://denodo.kr", "https://www.denodo.kr")
+                        .allowedOrigins(
+                                "https://denodo.kr",
+                                "https://www.denodo.kr",
+                                "http://localhost:8090"
+                        )
                         .allowedMethods("GET","POST","PUT","DELETE","OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
