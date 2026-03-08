@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.denodo.platform.api.file.mapper.FileMapper">
+
+    <insert id="insertFile" parameterType="map" useGeneratedKeys="true" keyProperty="fileId">
+        INSERT INTO TD_FILE
+        (ORIGIN_NAME, SAVE_NAME, SAVE_PATH, FILE_SIZE, CONTENT_TYPE)
+        VALUES
+        (#{originName}, #{saveName}, #{savePath}, #{fileSize}, #{contentType})
+    </insert>
+
+</mapper>

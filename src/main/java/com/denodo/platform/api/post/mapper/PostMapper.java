@@ -17,9 +17,16 @@ public interface PostMapper {
 
     Map<String, Object> selectPostById(@Param("postId") long postId);
 
+    List<Map<String, Object>> selectFilesByPostId (@Param("postId") long postId);
+
     int insertPost(Map<String, Object> post);
+
+    void insertPostFile(Map<String, Object> param);
 
     int updatePost(Map<String, Object> post);
 
     int deletePost(@Param("postId") long postId);
+
+    int deletePostFilesByPostId(@Param("postId") long postId);
+
 }

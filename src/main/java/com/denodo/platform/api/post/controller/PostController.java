@@ -40,7 +40,7 @@ public class PostController {
 
     @PostMapping
     public Map<String, Object> createPost(@RequestBody Map<String, Object> params) {
-        postService.createPost(params);
+        Map<String, Object> post = postService.createPost(params);
         return Map.of("result", "OK");
     }
 
@@ -49,7 +49,7 @@ public class PostController {
             @PathVariable Long id,
             @RequestBody Map<String, Object> params
     ) {
-        postService.modifyPost(id, params);
+        Map<String, Object> post = postService.modifyPost(id, params);
         return Map.of("result", "OK");
     }
 
